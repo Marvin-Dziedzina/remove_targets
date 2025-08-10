@@ -110,7 +110,6 @@ fn hunt_target_dirs(start: &Path) {
             }
             Err(e) => {
                 error!("Failed to get file type: {}", e);
-                return;
             }
         };
     });
