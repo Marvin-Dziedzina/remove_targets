@@ -12,13 +12,18 @@ use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 const CARGO_TOML_NAME: &str = "Cargo.toml";
 
 fn main() {
+    #[cfg(debug_assertions)]
     env_logger::init();
+
+    #[cfg(not(debug_assertions))]
+    env_logger::Builder::from_env(env_logger::Env::new().default_filter_or("info")).init();
 
     let matches = command!()
         .arg(
             Arg::new("path")
                 .value_parser(value_parser!(PathBuf))
-                .required(true),
+                .required(true)
+                .help("The path to clean from"),
         )
         .get_matches();
 
