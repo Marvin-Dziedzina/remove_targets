@@ -15,11 +15,7 @@ fn main() {
     env_logger::init();
 
     let matches = command!()
-        .arg(
-            Arg::new("path")
-                .value_parser(value_parser!(PathBuf))
-                .default_value("."),
-        )
+        .arg(Arg::new("path").value_parser(value_parser!(PathBuf)))
         .get_matches();
 
     let path = matches
