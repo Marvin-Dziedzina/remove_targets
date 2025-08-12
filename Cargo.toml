@@ -2,9 +2,10 @@
 name = "remove_targets"
 version = "0.1.0"
 edition = "2024"
+exclude = ["README.md"]
 
 [dependencies]
-clap = { version = "4.5.43", features = ["cargo"] }
+clap = { version = "4.5.44", features = ["cargo"] }
 env_logger = "0.11.8"
 log = { version = "0.4.27", features = ["release_max_level_info"] }
 rayon = "1.10.0"
